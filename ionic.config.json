@@ -1,0 +1,7 @@
+{
+  "name": "atividade avaliativa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
