@@ -9,5 +9,24 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   constructor() {}
+  alertButtons = ['OK']
+
+  valor=0;
+  resultado=0;
+  moeda='';
+
+
+  conversao(){
+
+    if(this.moeda == 'Dolar'){
+
+    this.resultado = this.valor/5
+
+  }
+  if(this.moeda == 'Euro'){
+    this.resultado = this.valor/5.5
+
+  }
+  }
 
 }
