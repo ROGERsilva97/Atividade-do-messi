@@ -1,41 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Distancia em gasolina calculator
+      idade
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-alert
-trigger="converter"
-header=""
-message={{resultado}}
-[buttons]="alertButtons"
-></ion-alert>
+<ion-content [fullscreen]="true">
 
+  <ion-alert
+    trigger="present-alert"
+    header="seu imc é"
+    message={{res}}
+    [buttons]="alertButtons">
+  </ion-alert>
 
-<ion-item>
-  <ion-input  type="number" [(ngModel)]="Distancia">Distancia em KM </ion-input>
-</ion-item>
+  <ion-toast trigger="present-alert"
+   message={{res}}
+    [duration]="5000"
+    color="danger">
+  </ion-toast>
 
-
-<ion-radio-group value="resultado"[(ngModel)]="tipo">
 
   <ion-item>
-  <ion-label>Gasolina</ion-label>
-  <ion-radio value="Gasolina" slot="start" ></ion-radio>
+    <ion-input  placeholder="Digite seu peso" type="number" [(ngModel)]="peso"></ion-input>
   </ion-item>
-
   <ion-item>
-  <ion-label>Álcool</ion-label>
-  <ion-radio value="Alcool" slot="start"></ion-radio>
+    <ion-input  placeholder="Digite sua altura" type="number" [(ngModel)]="hautura"></ion-input>
   </ion-item>
+  <ion-button expand="block" color="success" (click)="tempodevida()" id="present-alert">calculo</ion-button>
 
-  <ion-item>
-  <ion-label>Diesel</ion-label>
-  <ion-radio value="Diesel" slot="start"></ion-radio>
-  </ion-item>
+  <ion-label>{{imc}}</ion-label>
+</ion-content>
 
-</ion-radio-group>
-
-<ion-button expand="block" id="converter" (click)="conversao()">Calcular Consumo</ion-button>

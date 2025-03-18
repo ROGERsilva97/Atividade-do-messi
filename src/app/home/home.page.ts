@@ -8,29 +8,41 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
-  alertButtons = ['OK']
-
-  Distancia=0;
-  resultado=0;
-  tipo='';
+ constructor() {}
+imc=0;
 
 
-  conversao(){
+alertButtons = ['ok'];
+w() {}
+peso=0;
+hautura=0;
+res='';
 
-    if(this.tipo == 'Gasolina'){
 
-    this.resultado = this.Distancia/12
+tempodevida(){
 
+  this.imc=this.peso/(this.hautura*this.hautura);
+
+if(this.imc<18.5){
+  this.res = 'Você esta abaixo do peso'
+}
+else if(this.imc<=24.9){
+    this.res = 'Você esta no peso normal.'
   }
-  if(this.tipo == 'Alcool'){
-    this.resultado = this.Distancia/8
+ else if(this.imc <29.9){
+  this.res = 'Você esta sobrepeso.'
+ }
 
-  }
-  if(this.tipo == 'Diesel'){
-    this.resultado = this.Distancia/10
+else if(this.imc <=34.9){
+  this.res= 'Você esta obeso grau 1.'
+ }
+else if(this.imc <=39.9){
+  this.res = 'você esta obeso grau 2.'
+}
+else if(this.imc >40){
+  this.res = 'você esta obeso grau 3'
+}
 
-  }
-  }
+}
 
 }
