@@ -11,20 +11,24 @@ export class HomePage {
   constructor() {}
   alertButtons = ['OK']
 
-  valor=0;
+  Distancia=0;
   resultado=0;
-  moeda='';
+  tipo='';
 
 
   conversao(){
 
-    if(this.moeda == 'Dolar'){
+    if(this.tipo == 'Gasolina'){
 
-    this.resultado = this.valor/5
+    this.resultado = this.Distancia/12
 
   }
-  if(this.moeda == 'Euro'){
-    this.resultado = this.valor/5.5
+  if(this.tipo == 'Alcool'){
+    this.resultado = this.Distancia/8
+
+  }
+  if(this.tipo == 'Diesel'){
+    this.resultado = this.Distancia/10
 
   }
   }
